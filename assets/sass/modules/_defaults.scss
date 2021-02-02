@@ -1,0 +1,21 @@
+*{
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $main-bg-color;
+    color: $main-text-color;
+
+    font-family: $default-family;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+a {
+    color: $main-text-color;
+    display: block;
+    margin: 1rem 0;
+}
