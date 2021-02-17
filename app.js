@@ -26,7 +26,16 @@ messenger.attach(server);
 messenger.on('connection', (socket) => {
     console.log(`a user connected to the server: ${socket.id}`);
 
+    // send the connected user their assigned ID
+    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection granted'});
+
+    socket.on('chatmessage', function(msg) {
+        console.log(msg);
+
+        messenger.emit('message', { id: socket.id, message: msg });
+    });
+
     socket.on('disconnect', () => {
         console.log('a user has disconnected');
     })
-});
+});                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
