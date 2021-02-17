@@ -6,21 +6,41 @@
 
     <link rel="stylesheet" href="css/main.css">
 
-    <title>SMELLORR Chat</title>
+    <!-- google fonts link -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+
+    <title>Gausip®</title>
 </head>
 <body>
     <main>
-        <h1 class="hidden">SMELLORR's Chat App</h1>
-        <h4>Add a Username to Join the Chat!</h4>
-        <h6>or not, to use the stealth mode...</h6>
-
-        <input type="text" placeholder="Username">
-        <input type="text" placeholder="Password">
-
-        <input type="submit" value="Join!">
-
-        <!-- temporary hack to bypass the login -->
-        <a href="/chat">To the Chat App!</a>
+        <section class="welcomeSection">
+            <div class="welcome">
+                <h1 class="hidden">Gausip®</h1>
+                <img src="images/logo.png" alt="Logo">
+                    <div class="welcomeText" >
+                        <h4>Welcome to Gausip Chat</h4>
+                        <h5>Please enter a username and password to enter into the chatroom.</h5>
+                    </div>
+            </div>
+        </section>
+        <div id="user">
+            <section class="userLogin">
+                <form action="">
+                    <input type="text" placeholder="Name" v-model="username">
+                        <div id="welcomeButtons">
+                            <input id="joinButton" type="button" value="Join" @click.prevent="() => joinChat()">
+                        </div>
+                </form>
+            </section>
+    
+            <!--hack to bypass the login -->
+            <div class="secretPath"> 
+                <a @click.prevent="() => joinChat(true)">Chat Anonymously</a>
+            </div>
+        </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer type= "module" src="scripts/user.js"></script>
 </body>
 </html>

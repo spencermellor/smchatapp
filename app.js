@@ -9,6 +9,8 @@ app.use(express.static("public"));
 
 const port = process.env.PORT || 5050;
 
+let users = [];
+
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html")); 
 });
@@ -29,13 +31,25 @@ messenger.on('connection', (socket) => {
     // send the connected user their assigned ID
     socket.emit('connected', { sID: `${socket.id}`, message: 'new connection granted'});
 
-    socket.on('chatmessage', function(msg) {
-        console.log(msg);
+    // relays to everyone
+    socket.on('userjoined', username => {
+        users.push({
+            name: username.name,
+            id: socket.id
+        });
+        socket.broadcast.emit('usersUpdate', users)
+        socket.emit('usersUpdate', users)
+    })
 
-        messenger.emit('message', { id: socket.id, message: msg });
+    socket.on('chatmessage', function(msg) {
+
+        messenger.emit('message', { id: socket.id, message: msg});
     });
 
     socket.on('disconnect', () => {
-        console.log('a user has disconnected');
+        users = users.filter(elem => elem.id != socket.id);
+        socket.broadcast.emit('usersUpdate', users)
+        socket.emit('usersUpdate', users)
+        
     })
 });                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             

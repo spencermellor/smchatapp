@@ -1,7 +1,6 @@
 import ChatMessage from "./components/TheMessageComponent.js"
 
 (() => {
-    console.log('fried');
 
     // load socket library in and make the connection
     const socket = io();
@@ -15,6 +14,9 @@ import ChatMessage from "./components/TheMessageComponent.js"
     function appendMessage(message) {
         vm.messages.push(message);
     }
+    function updateUsers(users) {
+        vm.users = users;
+    }
 
     const vm = new Vue ({
         data: {
@@ -22,15 +24,20 @@ import ChatMessage from "./components/TheMessageComponent.js"
             nickname: "",
             username: "",
             socketID: "",
-            message: ""
+            message: "",
+            users: []
         },
 
         created: function() {
-            console.log('its alive!!');
+            this.nickname = localStorage.getItem('username');
+            socket.emit('userjoined', {
+                name: this.nickname
+            })
         },
 
         methods: {
             dispatchMessage() {
+            
                 socket.emit('chatmessage', {content: this.message, name: this.nickname || "Anonymous" });
 
                 this.message = "";
@@ -46,4 +53,6 @@ import ChatMessage from "./components/TheMessageComponent.js"
     socket.addEventListener("connected", setUserId);
 
     socket.addEventListener('message', appendMessage);
+
+    socket.addEventListener('usersUpdate', updateUsers);
 })();

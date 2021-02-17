@@ -5,32 +5,173 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
-  background-color: black;
-  color: white;
-  font-family: Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 16px;
+  background-color: #140000;
 }
 
-a {
+.welcomeSection {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 100%;
+}
+.welcomeSection .welcome {
+  margin: 0 auto;
+  background-color: #140000;
+}
+.welcomeSection .welcome img {
+  margin: 1rem;
+  width: 5%;
+  height: auto;
+}
+.welcomeSection .welcome h2 {
   color: white;
-  display: block;
-  margin: 1rem 0;
+  font-family: "Roboto Condensed", sans-serif;
+}
+.welcomeSection .welcome .welcomeText {
+  text-align: center;
+  background-color: #140000;
+  margin-top: 5rem;
+}
+.welcomeSection .welcome .welcomeText h4 {
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 2rem;
+}
+.welcomeSection .welcome .welcomeText h5 {
+  color: white;
+  font-family: "Cabin", sans-serif;
+  font-size: 1.1rem;
 }
 
-.new-message {
-  padding: 10px;
-  background-color: blue;
+.userLogin {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.userLogin input {
+  font-family: "Cabin", sans-serif;
+  margin: 0 auto;
+  width: 60%;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.userLogin #welcomeButtons {
+  margin-top: 2rem;
+}
+.userLogin #welcomeButtons #joinButton {
+  margin: 0 auto;
+  color: white;
+  width: 20%;
+  padding: 1rem;
+  background-color: #de7c5a;
+}
+.userLogin #welcomeButtons #joinButton:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.secretPath {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10rem;
+}
+.secretPath a {
+  color: white;
+  text-decoration: none;
+  background-color: #de7c5a;
+  padding: 1rem 3rem 1rem 3rem;
+  font-family: "Cabin", sans-serif;
+  font-size: 0.9rem;
+}
+
+.messageInterface {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.messageInterface .new-message {
+  padding: 20px;
+  background-color: #7a0000;
   color: white;
   border-radius: 8px;
-  float: left;
   clear: both;
+  font-family: "Cabin", sans-serif;
+  width: 20%;
+}
+.messageInterface .my-message {
+  background-color: #b10f2e;
+  margin-left: 80%;
+}
+.messageInterface .username {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.messageInterface .message-wrapper {
+  display: flex;
+  margin: 0 auto;
+  color: white;
+  flex-direction: column;
+  width: 80%;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.messageInterface .message-wrapper h4 {
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
+  padding-bottom: 2rem;
+}
+.messageInterface .message-wrapper .text-message {
+  color: #111111;
+  font-family: "Cabin", sans-serif;
+  padding: 1rem;
+  opacity: 0.9;
+  resize: vertical;
+}
+.messageInterface .message-wrapper input {
+  width: 40%;
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  color: white;
+  background-color: #de7c5a;
+}
+.messageInterface .message-wrapper input:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
-.my-message {
-  background-color: green;
-  float: right;
+.users {
+  color: white;
+}
+.users ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.users li {
+  background-color: #de7c5a;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+  opacity: 0.9;
+  margin-right: 5px;
+  font-family: "Cabin", sans-serif;
 }
 
 /*# sourceMappingURL=main.css.map */

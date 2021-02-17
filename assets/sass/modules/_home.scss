@@ -1,0 +1,95 @@
+.welcomeSection {
+
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 100%;
+
+    .welcome {
+
+        margin: 0 auto;
+        background-color: #140000 ;
+
+        img {
+            margin: 1rem;
+            width: 5%;
+            height: auto;
+        }
+    
+        h2 {
+            color: white;
+            font-family: $title-font;
+        }
+
+        .welcomeText {
+
+            text-align: center;
+            background-color: $main-bg-color;
+            margin-top: 5rem;
+
+            h4 {
+                color: white;
+                font-family: $title-font;
+                font-size: 2rem;
+            }
+    
+            h5 {
+                color: white;
+                font-family: $body-font;
+                font-size: 1.1rem ;
+            }
+        }
+    }
+}
+
+.userLogin {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+
+    input {
+        font-family: $body-font;
+        margin: 0 auto;
+        width: 60%;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+
+    #welcomeButtons {
+        margin-top: 2rem;
+
+        #joinButton {
+            margin: 0 auto;
+            color: white;
+            width: 20%;
+            padding: 1rem;
+            background-color: $button-color;
+        }
+
+        #joinButton:hover {
+            opacity: .8;
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+}
+
+.secretPath {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10rem;
+
+    a {
+        color: white;
+        text-decoration: none;
+        background-color: $button-color;
+        padding: 1rem 3rem 1rem 3rem;
+        font-family: $body-font;
+        font-size: .9rem;
+    }
+}
