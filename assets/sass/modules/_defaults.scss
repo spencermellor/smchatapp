@@ -5,31 +5,10 @@
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     background-color: $main-bg-color;
-    color: $main-text-color;
-
-    font-family: $default-family;
-    text-transform: uppercase;
-    font-size: 16px;
-}
-
-a {
-    color: $main-text-color;
-    display: block;
-    margin: 1rem 0;
-}
-
-.new-message {
-    padding: 10px;
-    background-color: blue;
-    color: white;
-    border-radius: 8px;
-    float: left;
-    clear: both;
-}
-
-.my-message {
-    background-color: green;
-    float: right;
 }
